@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 1</title>
+    <title>Conversion</title>
     <link rel="stylesheet" href="conversion_style.css"/>
 </head>
 
@@ -15,17 +15,15 @@
     <div class="converter">
         <h2>Celsius to Fahrenheit</h2>
         <label for="celsius">Enter Celsius:</label>
-        <input type="number" id="celsius" placeholder="Enter celsius" />
-        <button onclick="calcFahrenheit()">Calculate</button>
+        <input type="number" id="celsius" placeholder="Enter celsius" onkeyup="calcFahrenheit()" />
         <h4 id="resultC-F"></h4>
     </div>
 
     <!-- Fahrenheit to Celsius -->
     <div class="converter">
-        <h2>Fahrenheit to celsius</h2>
-        <label for="fahrenheit">Enter Celsius:</label>
-        <input type="number" id="fahrenheit" placeholder="Enter fahrenheit" />
-        <button onclick="calcCelsius()">Calculate</button>
+        <h2>Fahrenheit to Celsius</h2>
+        <label for="fahrenheit">Enter Fahrenheit:</label>
+        <input type="number" id="fahrenheit" placeholder="Enter fahrenheit" onkeyup="calcCelsius()" />
         <h4 id="resultF-C"></h4>
     </div>
 
@@ -33,8 +31,7 @@
     <div class="converter">
         <h2>Meters to Feet</h2>
         <label for="meters">Enter Meters:</label>
-        <input type="number" id="meters" placeholder="Enter meters" />
-        <button onclick="calcFeet()">Calculate</button>
+        <input type="number" id="meters" placeholder="Enter meters" onkeyup="calcFeet()" />
         <h4 id="resultM-Ft"></h4>
     </div>
     
@@ -42,63 +39,59 @@
     <div class="converter">
         <h2>Feet to Meters</h2>
         <label for="feet">Enter Feet:</label>
-        <input type="number" id="feet" placeholder="Enter feet" />
-        <button onclick="calcMeters()">Calculate</button>
+        <input type="number" id="feet" placeholder="Enter feet" onkeyup="calcMeters()" />
         <h4 id="resultFt-M"></h4>
     </div>
 
     <script>
         function calcFahrenheit() {
-            let celsiusInput = parseFloat(document.getElementById("celsius").value);
-            let fahrenheitOutput;
-            if (isNaN(celsiusInput)) {
-                document.getElementById("resultC-F").innerText = `Please enter a valid number.`;
-            }
-            else {
-                fahrenheitOutput = (celsiusInput * 9 / 5) + 32;
-                document.getElementById("resultC-F").innerText = `${celsiusInput}°C is ${fahrenheitOutput.toFixed(2)}°F`;
+            let celsiusInput = document.getElementById("celsius").value;
+            let resultElement = document.getElementById("resultC-F");
+    
+            if (celsiusInput === "") {
+                resultElement.innerText = ""; // Clear output if input is empty
+            } else {
+                let fahrenheitOutput = (parseFloat(celsiusInput) * 9 / 5) + 32;
+                resultElement.innerText = `${celsiusInput}°C is ${fahrenheitOutput.toFixed(2)}°F`;
             }
         }
-
+    
         function calcCelsius() {
-            let fahrenheitInput = parseFloat(document.getElementById("fahrenheit").value);
-            let celsiusOutput;
-            if (isNaN(fahrenheitInput)) {
-                document.getElementById("resultF-C").innerText = `Please enter a valid number.`;
-            }
-            else {
-                celsiusOutput = (fahrenheitInput - 32) * 5 / 9;
-                document.getElementById("resultF-C").innerText = `${fahrenheitInput}°F is ${celsiusOutput.toFixed(2)}°C`;
+            let fahrenheitInput = document.getElementById("fahrenheit").value;
+            let resultElement = document.getElementById("resultF-C");
+    
+            if (fahrenheitInput === "") {
+                resultElement.innerText = ""; // Clear output if input is empty
+            } else {
+                let celsiusOutput = (parseFloat(fahrenheitInput) - 32) * 5 / 9;
+                resultElement.innerText = `${fahrenheitInput}°F is ${celsiusOutput.toFixed(2)}°C`;
             }
         }
-
+    
         function calcFeet() {
-            let metersInput = parseFloat(document.getElementById("meters").value);
-            let feetOutput;
-            if (isNaN(metersInput)) {
-                document.getElementById("resultM-Ft").innerText = `Please enter a valid number.`;
-            }
-            else {
-                feetOutput = metersInput * 3.281;
-                document.getElementById("resultM-Ft").innerText = `${metersInput}m is ${feetOutput.toFixed(2)}ft`;
+            let metersInput = document.getElementById("meters").value;
+            let resultElement = document.getElementById("resultM-Ft");
+    
+            if (metersInput === "") {
+                resultElement.innerText = ""; // Clear output if input is empty
+            } else {
+                let feetOutput = parseFloat(metersInput) * 3.281;
+                resultElement.innerText = `${metersInput}m is ${feetOutput.toFixed(2)}ft`;
             }
         }
-
+    
         function calcMeters() {
-            let feetInput = parseFloat(document.getElementById("feet").value);
-            let metersOutput;
-
-            if (isNaN(feetInput)) {
-                document.getElementById("resultFt-M").innerText = `Please enter a valid number.`;
-            }
-            else {
-                metersOutput = feetInput / 3.281;
-                document.getElementById("resultFt-M").innerText = `${feetInput}ft is ${metersOutput.toFixed(2)}m`;
+            let feetInput = document.getElementById("feet").value;
+            let resultElement = document.getElementById("resultFt-M");
+    
+            if (feetInput === "") {
+                resultElement.innerText = ""; // Clear output if input is empty
+            } else {
+                let metersOutput = parseFloat(feetInput) / 3.281;
+                resultElement.innerText = `${feetInput}ft is ${metersOutput.toFixed(2)}m`;
             }
         }
-
-
-    </script>
+    </script>    
 </body>
 
 </html>

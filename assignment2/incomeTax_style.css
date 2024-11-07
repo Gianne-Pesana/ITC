@@ -1,0 +1,101 @@
+/* General Page Styling */
+body {
+    background-color: #11131b;
+    color: #d1d6e2;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+/* Main Header Styling */
+h1 {
+    font-size: 2.3em;
+    color: #6fa1db;
+    margin-bottom: 15px;
+}
+
+/* Subheader Styling */
+h2 {
+    font-size: 1.8em;
+    color: #9bb2d4;
+    margin-bottom: 25px;
+}
+
+/* Container Styling */
+.container {
+    background-color: #1d2029;
+    border: 1px solid #4c5361;
+    border-radius: 10px;
+    padding: 20px;
+    width: 85%;
+    max-width: 420px;
+    box-shadow: 0 0 25px rgba(110, 110, 110, 0.3);
+    margin-bottom: 30px;
+    padding-bottom: 10px; /* Optional, you can tweak this for less space */
+}
+
+/* Label Styling with High Contrast */
+label {
+    font-size: 1.1em;
+    color: #c3cee0; /* Brighter color for contrast */
+    margin-top: 15px;
+    display: block;
+}
+
+/* Input Field Styling */
+input[type="number"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 90%;
+    background-color: #2f333d;
+    color: #e0e5ec;
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+/* Tax Payable Label Styling */
+h4 {
+    color: #a1b1c7;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+h4.h4Input {
+    margin-bottom: 10px;
+}
+
+/* Output Container Styling */
+.output-container {
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+h4.h4Output {
+    margin-bottom: 60px;
+}
+
+/* Tax Payable Output Styling */
+h6 {
+    color: #e5f0ff;
+    font-size: 1.4em;
+    font-weight: normal;
+    margin: 0; /* Remove all margins */
+    padding: 0; /* Remove any padding */
+}
+
+/* Line below the output */
+.output-line {
+    height: 2px;
+    width: 80%;
+    background-color: #3f4a5c;
+    margin: 0 auto 50px;
+}
