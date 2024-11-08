@@ -138,21 +138,37 @@
   }
   
   .home-content h1 {
-    font-size: 3em;
+    font-size: 3.5em;
     color: #ffffff;
     margin-bottom: 20px;
-    max-width: 550px;
-    width: 100%;
-    margin: 0 auto;
     text-align: center;
-  }
-  
-  .home-content p {
-    font-size: 1.5em;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    transition: color 0.3s ease;
+}
+
+.home-content h1:hover {
+    color: #3dd1e7;
+}
+
+.home-content h3 {
+    font-size: 2em;
+    color: #8db8ff;
+    margin-top: 40px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.home-content p {
+    font-size: 1.2em;
     color: #b0c4de;
-    margin-top: 30px;
-    margin-bottom: 100px;
-  }
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-style: italic;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
   
   .button {
     background-color: #3dd1e7;
@@ -226,16 +242,55 @@
   }
   
   @media (max-width: 768px) {
-    .rocket {
-    max-width: 15vw;
-      bottom: 15%;
+    .home-content h1 {
+        font-size: 2.8em;
+        letter-spacing: 1.5px;
+    }
+    .home-content h3 {
+        font-size: 1.8em;
+    }
+    .home-content p {
+        font-size: 1em;
+        margin-bottom: 40px;
+    }
+
+  .rocket {
       right: 10%;
+      bottom: 30%;
+      max-width: 16vw;
+  }
+  .programming {
+      left: 8%;
+      bottom: 31%;
+  }
+  }
+  
+  @media (max-width: 480px) {
+    .home-content h1 {
+        font-size: 2.2em;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+        margin:50px;
     }
-    .programming {
-      max-width: 20vw;
-      bottom: 18%;
-      left: 5%;
+    .home-content h3 {
+        font-size: 1.6em;
+        margin-top: 30px;
     }
+    .home-content p {
+        font-size: 0.9em;
+        margin-bottom: 30px;
+    }
+
+    .rocket {
+      right: 8%;
+      bottom: 15%;
+      max-width: 16vw;
+  }
+  .programming {
+      left: 3%;
+      bottom: 15%;
+  }
+    
   }
   
   #assignments {
