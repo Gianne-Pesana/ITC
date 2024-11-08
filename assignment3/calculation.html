@@ -6,6 +6,30 @@
     <title>Calculation</title>
 </head>
 <body>
-    <h1>Calculation Assignment</h1>
+    <h1>Assignment #3</h1>
+    <h2>Calculation using loops</h2>
+
+    <div class="calculation-container">
+        <h3>Nth factorial</h3>
+        <h4>Enter n:</h4>
+        <input type="number" id="factorialInput" placeholder="enter n">
+        <button onclick="calcFactorial()">Calculate</button>
+        <h4 id="factorialOutput"></h4>
+    </div>
+
+    <script>
+        function calcFactorial() {
+            let n = parsefloat(document.getElementById("factorialInput").value);
+            let result;
+
+            let i = n;
+            while (n > 1) {
+                result *= i - 1;
+                i--;
+            }
+
+            document.getElementById("factorialOutput").innerText = `${parseFloat(n).toFixed(2)}! = ${result}`;
+        }
+    </script>
 </body>
 </html>
