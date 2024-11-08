@@ -11,24 +11,58 @@
 
     <div class="calculation-container">
         <h3>Nth factorial</h3>
-        <h4>Enter n:</h4>
-        <input type="number" id="factorialInput" placeholder="enter n">
+        <h4>Enter a number:</h4>
+        <input type="number" id="factorialInput" placeholder="number">
         <button onclick="calcFactorial()">Calculate</button>
-        <h4 id="factorialOutput"></h4>
+        <h4 class="result" id="factorialOutput"></h4>
+    </div>
+
+    <div class="calculation-container">
+        <h3>Sum of the first n numbers</h3>
+        <h4>Enter a number:</h4>
+        <input type="number" id="sumInput" placeholder="number">
+        <button onclick="calcSumOfN()">Calculate</button>
+        <h4 class="resultText" id="sumOutputText">Sum of the first N number is:</h4>
+        <h4 class="resultNumber" id="sumOutputNumber"></h4>
     </div>
 
     <script>
         function calcFactorial() {
-            let n = parsefloat(document.getElementById("factorialInput").value);
-            let result;
+            let n = parseFloat(document.getElementById("factorialInput").value);
+            let factorialOutput = document.getElementById("factorialOutput");
+            let result = 1;
 
             let i = n;
-            while (n > 1) {
-                result *= i - 1;
+            while (i > 1) {
+                result *= i;
                 i--;
             }
 
-            document.getElementById("factorialOutput").innerText = `${parseFloat(n).toFixed(2)}! = ${result}`;
+            factorialOutput.innerText = `${n}! = ${result}`;
+        }
+
+        function calcSumOfN() {
+            const sumInput = document.getElementById("sumInput").value;
+            const sumOutputText = document.getElementById("sumOutputText");
+            const sumOutputNumber = document.getElementById("sumOutputNumber");
+            const n = parseFloat(sumInput);
+
+            if (isNaN(n)) {
+                sumOutputText.innerText = "Please enter a valid number";
+                sumOutputNumber.innerText = "";
+                return;
+            }
+
+            let result = 0;
+            let i = 1;
+
+            do {
+                result += i;
+                i++;
+            } while (i <= n);
+
+            sumOutputText.innerText = `Sum of the first ${n} numbers is:`;
+            sumOutputNumber.innerText = result;
         }
     </script>
 </body>
