@@ -9,6 +9,7 @@
     <h1>Assignment #3</h1>
     <h2>Calculation using loops</h2>
 
+    <!-- Nth factorial -->
     <div class="calculation-container">
         <h3>Nth factorial</h3>
         <h4>Enter a number:</h4>
@@ -17,19 +18,30 @@
         <h4 class="result" id="factorialOutput"></h4>
     </div>
 
+    <!-- Sum of the first N numbers -->
     <div class="calculation-container">
-        <h3>Sum of the first n numbers</h3>
+        <h3>Sum of the first N numbers</h3>
         <h4>Enter a number:</h4>
         <input type="number" id="sumInput" placeholder="number">
         <button onclick="calcSumOfN()">Calculate</button>
-        <h4 class="resultText" id="sumOutputText">Sum of the first N number is:</h4>
+        <h4 class="resultText" id="sumOutputText">Sum of the first N numbers is:</h4>
         <h4 class="resultNumber" id="sumOutputNumber"></h4>
+    </div>
+
+    <!-- Average of the first N numbers -->
+    <div class="calculation-container">
+        <h3>Average of the first N numbers</h3>
+        <h4>Enter a number:</h4>
+        <input type="number" id="averageInput" placeholder="number">
+        <button onclick="calcAverage()">Calculate</button>
+        <h4 class="resultText" id="averageOutputText">Average of the first N numbers is:</h4>
+        <h4 class="resultNumber" id="averageOutputNumber"></h4>
     </div>
 
     <script>
         function calcFactorial() {
-            let n = parseFloat(document.getElementById("factorialInput").value);
-            let factorialOutput = document.getElementById("factorialOutput");
+            const n = parseFloat(document.getElementById("factorialInput").value);
+            const factorialOutput = document.getElementById("factorialOutput");
             let result = 1;
 
             let i = n;
@@ -64,6 +76,33 @@
             sumOutputText.innerText = `Sum of the first ${n} numbers is:`;
             sumOutputNumber.innerText = result;
         }
+
+        function calcAverage() {
+            const averageInput = document.getElementById("averageInput").value;
+            const averageOutputText = document.getElementById("averageOutputText");
+            const averageOutputNumber = document.getElementById("averageOutputNumber");
+            const n = parseFloat(averageInput);
+
+            if (isNaN(n))
+            {
+                averageOutputText.innerText = `Please enter a valid number`;
+                averageOutputText.innerText = "";
+                return;
+            }
+
+            let result = 0;
+            for (let i = 1; i <= n; i++)
+            {
+                result += i;
+            }
+
+            result /= n;
+
+            averageOutputText.innerText = `Average of the first ${n} numbers is:`;
+            averageOutputNumber.innerText = result;
+        }
+
+        
     </script>
 </body>
 </html>
