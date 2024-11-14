@@ -1,0 +1,102 @@
+/* Updated Dark Theme Styles */
+
+body {
+    background-color: #121212;
+    color: #e0e5ec;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #6ea1d4;
+    margin-bottom: 15px;
+}
+
+h2 {
+    color: #87b6db;
+    font-size: 1.7em;
+    margin-top: 5px;
+}
+
+h3 {
+    color: #6ea1d4;
+    font-size: 1.4em;
+    margin-top: 25px;
+}
+
+.calculation-container {
+    background-color: #1c1f2b;
+    border: 1px solid #343a48;
+    border-radius: 12px;
+    padding: 25px;
+    width: 85%;
+    max-width: 450px;
+    box-shadow: 0 0 25px rgba(50, 50, 50, 0.4);
+    margin: 20px 0;
+}
+
+input[type="number"] {
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    width: 90%;
+    background-color: #2a2f3b;
+    color: #e0e5ec;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+}
+
+input[type="number"]::placeholder {
+    color: #9ea7b3;
+}
+
+input[type="number"]:focus {
+    outline: none;
+    background-color: #3a414d;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #556080;
+    color: #e0e5ec;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #667799;
+}
+
+.result, .resultText, .resultNumber {
+    color: #ccd6e3;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.resultText {
+    margin-bottom: 20px;
+}
+
+.output-line {
+    border: none;
+    border-top: 1px solid #4a5460;
+    width: 90%;
+    max-width: 350px;
+    margin: 20px auto;
+    opacity: 0.5;
+}
