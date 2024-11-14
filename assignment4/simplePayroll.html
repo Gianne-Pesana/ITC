@@ -1,11 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Payroll</title>
-</head>
-<body>
-    <h1>Simple Payroll Assignment</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Table</title>
+        <link rel="stylesheet" href="simplePayrollStyle.css">
+    </head>
+    <body>
+    <h3>Add Employee</h3>
+    <form id="employeeForm">
+        <label for="employeeName">Employee Name: <input type="text" id="employeeName" required></label><br>
+        <label for="daysWorked">Days Worked: <input type="number" id="daysWorked" required></label><br>
+        <label for="dailyRate">Daily Rate: <input type="number" id="dailyRate" required></label><br>
+        <label for="deductionAmount">Deduction Amount: <input type="number" id="deductionAmount" required></label><br>
+        <button type="submit">Add Employee</button>
+    </form>
+        
+    <h2>Employee Details</h2>
+    <table id="employeeTable">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Employee Name</th>
+                <th>Days Worked</th>
+                <th>Daily Rate</th>
+                <th>Gross Pay</th>
+                <th>Deduction Amount</th>
+                <th>Net Pay</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Rows will be added here dynamically -->
+        </tbody>
+    </table>
+
+
+    <script src="simplePayrollScript.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pop-up Form Example</title>
+  <style>
+    /* Basic styling for the page */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    /* Button styling */
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    /* Popup overlay styling */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: none; /* Hidden by default */
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Popup window styling */
+    .popup {
+      background-color: white;
+      padding: 20px;
+      width: 300px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Form input styling */
+    .popup input[type="text"],
+    .popup input[type="number"],
+    .popup input[type="date"] {
+      width: 100%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* Close button styling */
+    .close-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Button to open the pop-up -->
+  <button class="btn" id="openPopupBtn">Add</button>
+
+  <!-- Pop-up overlay -->
+  <div class="overlay" id="popupOverlay">
+    <div class="popup">
+      <button class="close-btn" id="closePopupBtn">X</button>
+      <h2>Add Details</h2>
+      <form id="detailsForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        
+        <label for="age">Age:</label>
+        <input type="number" id="age" required>
+        
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" required>
+        
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Get elements
+    const openPopupBtn = document.getElementById('openPopupBtn');
+    const popupOverlay = document.getElementById('popupOverlay');
+    const closePopupBtn = document.getElementById('closePopupBtn');
+    const detailsForm = document.getElementById('detailsForm');
+
+    // Show the pop-up
+    openPopupBtn.addEventListener('click', () => {
+      popupOverlay.style.display = 'flex';
+    });
+
+    // Close the pop-up
+    closePopupBtn.addEventListener('click', () => {
+      popupOverlay.style.display = 'none';
+    });
+
+    // Handle form submission
+    detailsForm.addEventListener('submit', (event) => {
+      event.preventDefault(); // Prevent actual form submission
+
+      // Get form values
+      const name = document.getElementById('name').value;
+      const age = document.getElementById('age').value;
+      const birthday = document.getElementById('birthday').value;
+
+      // Log values or send to server
+      console.log(`Name: ${name}, Age: ${age}, Birthday: ${birthday}`);
+
+      // Close the pop-up after submission
+      popupOverlay.style.display = 'none';
+
+      // Clear the form
+      detailsForm.reset();
+    });
+  </script>
+
+</body>
+</html>
