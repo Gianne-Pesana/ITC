@@ -1,14 +1,264 @@
-/* Styling for the Employee Table */
-table {
-    width: 100%;
-    border-collapse: collapse;
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-table, th, td {
-    border: 1px solid black;
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  color: #333;
+  padding-top: 20px;
 }
 
-th, td {
-    padding: 8px;
-    text-align: center;
+/* Header */
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #495057;
 }
+
+/* Container for layout */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+/* Left side section */
+.left-side {
+  width: 30%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.left-side h3 {
+  font-size: 1.5em;
+  color: #6c757d;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #adb5bd;
+  padding-bottom: 5px;
+}
+
+.inputs label {
+  font-size: 1.1em;
+  color: #495057;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.inputs input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #adb5bd;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.inputs input:focus {
+  border-color: #495057;
+}
+
+.inputs button {
+  width: 100%;
+  padding: 12px;
+  background-color: #17a2b8;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.inputs button:hover {
+  background-color: #138496;
+}
+
+/* Right side section */
+.right-side {
+  flex-grow: 1;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.right-side h3 {
+  font-size: 1.5em;
+  color: #6c757d;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #adb5bd;
+  padding-bottom: 5px;
+}
+
+/* Table styling */
+.table-container {
+  overflow-x: auto;
+}
+
+#payrollTable {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#payrollTable th {
+  padding: 15px;
+  background-color: #6c757d;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  border-right: 1px solid #e9ecef; /* Adds vertical line between header columns */
+}
+
+#payrollTable th:last-child {
+  border-right: none; /* Removes the right border on the last header cell */
+}
+
+#payrollTable td {
+  padding: 12px 15px;
+  border: 1px solid #e9ecef;
+  color: #495057;
+}
+
+#payrollTable tr:nth-child(even) {
+  background-color: #e6e6e6;
+}
+
+#payrollTable tr:hover {
+  background-color: #e2e6ea;
+}
+
+
+/* "No data" row style */
+.no-data-row {
+  text-align: center;
+  font-style: italic;
+  color: #adb5bd;
+  background-color: #f8f9fa;
+}
+
+/* Modal backdrop */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  width: 350px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal header */
+.modal-content h2 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* Modal input */
+.modal-content input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  margin: 10px 0 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.modal-content input[type="number"]:focus {
+  border-color: #007bff;
+}
+
+/* Modal buttons */
+.modal-content button {
+  width: 45%;
+  padding: 10px 0;
+  font-size: 1em;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  margin: 5px;
+}
+
+#confirmDeleteLineBtn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#confirmDeleteLineBtn:hover {
+  background-color: #0056b3;
+}
+
+#closeModalBtn {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+#closeModalBtn:hover {
+  background-color: #5a6268;
+}
+
+/* Confirmation Modal buttons */
+#confirmDeleteBtn {
+  background-color: #4CAF50; /* Confirm button green */
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+#confirmDeleteBtn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+#cancelDeleteBtn {
+  background-color: #f44336; /* Cancel button red */
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+}
+
+#cancelDeleteBtn:hover {
+  background-color: #d32f2f; /* Darker red on hover */
+}
+
+

@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const calcFeet = document.getElementById("meters");
     const calcMeters = document.getElementById("feet");
 
+    // celsius to fahrenheit
     calcFahrenheit.addEventListener("keyup", (event) => {
         let celsiusInput = document.getElementById("celsius").value;
         let resultElement = document.getElementById("resultC-F");
@@ -16,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
+    // fahrenheit to celsius
     calcCelsius.addEventListener("keyup", (event) => {
         let fahrenheitInput = document.getElementById("fahrenheit").value;
         let resultElement = document.getElementById("resultF-C");
@@ -28,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
+    // Meters to feet
     calcFeet.addEventListener("keyup", (event) => {
         let metersInput = document.getElementById("meters").value;
         let resultElement = document.getElementById("resultM-Ft");
@@ -40,6 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
+    // Feet to meters
     calcMeters.addEventListener("keyup", () => {
         let feetInput = document.getElementById("feet").value;
         let resultElement = document.getElementById("resultFt-M");

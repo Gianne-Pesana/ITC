@@ -1,42 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Employee Table</title>
-        <link rel="stylesheet" href="simplePayrollStyle.css">
-        <link rel="icon" href="../assets/favicon/favicon2.ico" type="image/x-icon"/>
-    </head>
-    <body>
-    <h3>Add Employee</h3>
-    <form id="employeeForm">
-        <label for="employeeName">Employee Name: <input type="text" id="employeeName" required></label><br>
-        <label for="daysWorked">Days Worked: <input type="number" id="daysWorked" required></label><br>
-        <label for="dailyRate">Daily Rate: <input type="number" id="dailyRate" required></label><br>
-        <label for="deductionAmount">Deduction Amount: <input type="number" id="deductionAmount" required></label><br>
-        <button type="submit">Add Employee</button>
-    </form>
-        
-    <h2>Employee Details</h2>
-    <table id="employeeTable">
-        <thead>
-            <tr>
-                <th>No.</th>
-                <th>Employee Name</th>
-                <th>Days Worked</th>
-                <th>Daily Rate</th>
-                <th>Gross Pay</th>
-                <th>Deduction Amount</th>
-                <th>Net Pay</th>
-            </tr>
-        </thead>
-        <tbody id="tableBody">
-            <!-- Rows will be added here dynamically -->
-        </tbody>
-    </table>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="simplePayrollStyle.css">
+    <title>Payroll System</title>
+</head>
+<body>
 
+    <!-- Header -->
+    <h1>Assignment #4</h1>
+
+    <!-- Container for layout -->
+    <div class="container">
+        <!-- Left side: Inputs Section -->
+        <div class="left-side">
+            <h3>Enter Values</h3>
+            <div class="inputs">
+                <label for="name">Employee Name</label>
+                <input type="text" id="name" placeholder="Enter name">
+    
+                <label for="daysWorked">Days Worked</label>
+                <input type="number" id="daysWorked" placeholder="Enter days worked">
+    
+                <label for="dailyRate">Daily Rate</label>
+                <input type="number" id="dailyRate" placeholder="Enter daily rate">
+    
+                <label for="deduction">Deduction</label>
+                <input type="number" id="deduction" placeholder="Enter deduction">
+    
+                <button id="addEmployeeBtn">Add Employee</button>
+                <button id="deleteEmployeeBtn">Delete Employee</button>
+            </div>
+        </div>
+
+        <!-- Right side: Table Section -->
+        <div class="right-side">
+            <h3>Payroll Table</h3>
+            <div class="table-container">
+                <table id="payrollTable">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Name</th>
+                            <th>Days Worked</th>
+                            <th>Daily Rate</th>
+                            <th>Gross Pay</th>
+                            <th>Deduction</th>
+                            <th>Net Pay</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr id="noDataRow" class="no-data-row">
+                            <td colspan="7">No data</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Deletion -->
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <h2>Select Row to Delete</h2>
+            <input type="number" id="deleteLineNumber" placeholder="Enter row number">
+            <button id="confirmDeleteLineBtn">Next</button>
+            <button id="closeModalBtn">Close</button>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+            <h2 id="confirmationText">Are you sure you want to delete row?</h2>
+            <button id="confirmDeleteBtn">Confirm</button>
+            <button id="cancelDeleteBtn">Cancel</button>
+        </div>
+    </div>
 
     <script src="simplePayrollScript.js"></script>
-
 </body>
 </html>

@@ -21,6 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const n = parseFloat(factorialInput.value);
         let result = 1;
 
+        // check invalid input
         if (isNaN(n) || n < 0) {
             factorialOutput.innerText = "Please enter a valid number";
             return;
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
     calcSumOfN.addEventListener("click", () => {
         const n = parseFloat(sumInput.value);
 
+        // check invalid input
         if (isNaN(n) || n < 0) {
             sumOutputText.innerText = "Please enter a valid number";
             sumOutputNumber.innerText = "";
@@ -58,6 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     calcAverage.addEventListener("click", () => {
         const n = parseFloat(averageInput.value);
 
+        // check invalid input
         if (isNaN(n) || n < 0) {
             averageOutputText.innerText = "Please enter a valid number";
             averageOutputNumber.innerText = "";
