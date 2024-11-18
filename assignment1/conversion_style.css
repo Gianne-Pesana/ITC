@@ -1,5 +1,35 @@
+/* Starry Background */
+#starryBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: black;
+    overflow: hidden;
+}
+
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: white;
+    border-radius: 50%;
+    animation: blink 2s infinite ease-in-out;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.3;
+    }
+}
+
 body {
-    background-color: #0d0f15;
+    background: transparent; /* Allow starry background visibility */
     color: #e0e5ec;
     font-family: Arial, sans-serif;
     display: flex;
@@ -49,6 +79,10 @@ input[type="number"] {
     color: #e0e5ec;
     text-align: center;
     font-size: 1em;
+}
+
+input[type="number"]::placeholder {
+    color: #a4a9b6;
 }
 
 h4 {
