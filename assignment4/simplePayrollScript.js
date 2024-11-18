@@ -11,56 +11,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const deleteLineNumberInput = document.getElementById('deleteLineNumber');
     const tableBody = document.getElementById('tableBody');
     const noDataRow = document.getElementById('noDataRow');
-    
-    // Initialize row number counter
-    let rowCount = 0;
 
     // Add Employee Button Functionality
     addEmployeeBtn.addEventListener('click', () => {
         const name = document.getElementById('name').value;
-        const daysWorked = document.getElementById('daysWorked').value;
-        const dailyRate = document.getElementById('dailyRate').value;
-        const deduction = document.getElementById('deduction').value;
+        const daysWorked = parseInt(document.getElementById('daysWorked').value);
+        const dailyRate = parseFloat(document.getElementById('dailyRate').value);
+        const deduction = parseFloat(document.getElementById('deduction').value);
 
-        if (name && daysWorked && dailyRate && deduction) {
-            // Increase row count and create a new row
-            rowCount++;
-
+        if (name && !isNaN(daysWorked) && !isNaN(dailyRate) && !isNaN(deduction)) {
             const grossPay = daysWorked * dailyRate;
             const netPay = grossPay - deduction;
 
             const newRow = document.createElement('tr');
             newRow.innerHTML = `
-                <td>${rowCount}</td>
+                <td></td>
                 <td>${name}</td>
                 <td>${daysWorked}</td>
-                <td>${dailyRate}</td>
-                <td>${grossPay}</td>
-                <td>${deduction}</td>
-                <td>${netPay}</td>
+                <td>${dailyRate.toFixed(2)}</td>
+                <td>${grossPay.toFixed(2)}</td>
+                <td>${deduction.toFixed(2)}</td>
+                <td>${netPay.toFixed(2)}</td>
             `;
 
-            // Append the row to the table
+            // Append the new row to the table
             tableBody.appendChild(newRow);
 
-            // Hide the "No data" row if data exists
-            if (tableBody.childElementCount > 1) {
-                noDataRow.style.display = 'none';
-            }
+            // Hide the "No data" row if any data exists
+            noDataRow.style.display = 'none';
 
-            // Clear the input fields after adding the employee
+            // Update row numbers
+            updateTableRowNumbers();
+
+            // Clear input fields
             document.getElementById('name').value = '';
             document.getElementById('daysWorked').value = '';
             document.getElementById('dailyRate').value = '';
             document.getElementById('deduction').value = '';
         } else {
-            alert('Please fill in all fields.');
+            alert('Please fill in all fields with valid values.');
         }
     });
 
     // Delete Employee Button Functionality
     deleteEmployeeBtn.addEventListener('click', () => {
-        // Show the delete modal
         deleteModal.style.display = 'flex';
     });
 
@@ -68,12 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmDeleteLineBtn.addEventListener('click', () => {
         const rowToDelete = parseInt(deleteLineNumberInput.value);
 
-        if (rowToDelete >= 1 && rowToDelete <= rowCount) {
-            // Show the confirmation modal and close the deletion modal
+        if (rowToDelete >= 1 && rowToDelete <= tableBody.rows.length - 1) { // Ensure valid range
             deleteModal.style.display = 'none';
             confirmationModal.style.display = 'flex';
-
-            // Store the row to delete in the confirmation button
             confirmDeleteBtn.dataset.rowToDelete = rowToDelete;
         } else {
             alert('Invalid row number. Please enter a valid row number.');
@@ -84,36 +75,22 @@ document.addEventListener('DOMContentLoaded', () => {
     confirmDeleteBtn.addEventListener('click', () => {
         const rowToDelete = parseInt(confirmDeleteBtn.dataset.rowToDelete);
 
-        // Find the row to delete by its index (rowToDelete)
-        const rows = tableBody.querySelectorAll('tr');
-        const rowToDeleteElement = rows[rowToDelete - 1]; // Select the row using the user input index (adjusted for 0-indexed array)
+        const rows = Array.from(tableBody.querySelectorAll('tr')).filter(row => row !== noDataRow);
 
-        if (rowToDeleteElement) {
-            // Delete the selected row from the table
-            rowToDeleteElement.remove();
-            rowCount--; // Decrease row count
-
-            // Update table row numbers
+        if (rowToDelete >= 1 && rowToDelete <= rows.length) {
+            rows[rowToDelete - 1].remove(); // Delete the selected row
             updateTableRowNumbers();
-
-            // Check if the table is now empty
-            if (rowCount === 0) {
-                // If there are no rows, show the "No data" row and set text
-                tableBody.innerHTML = ''; // Clear all existing rows
-                tableBody.appendChild(noDataRow);  // Re-append the "No data" row to refresh the table
-                noDataRow.style.display = 'table-row'; // Make sure "No data" is visible
-                noDataRow.innerHTML = `<td colspan="7">No data</td>`; 
-            }
-
-            // Close the confirmation modal
-            confirmationModal.style.display = 'none';
-
-            // Clear the input field after successful deletion
-            clearDeleteModalInput();
         }
+
+        if (tableBody.querySelectorAll('tr').length === 1) { // Only "No data" row remains
+            noDataRow.style.display = 'table-row';
+        }
+
+        confirmationModal.style.display = 'none';
+        deleteLineNumberInput.value = '';
     });
 
-    // Cancel Deletion in the Confirmation Modal
+    // Cancel Deletion
     cancelDeleteBtn.addEventListener('click', () => {
         confirmationModal.style.display = 'none';
     });
@@ -121,21 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Close the Delete Modal
     closeModalBtn.addEventListener('click', () => {
         deleteModal.style.display = 'none';
-        clearDeleteModalInput(); // Clear the input field when the modal is closed
+        deleteLineNumberInput.value = '';
     });
 
-    // Update table row numbers after deletion
+    // Update table row numbers after adding/deleting rows
     function updateTableRowNumbers() {
-        const rows = tableBody.querySelectorAll('tr');
+        const rows = Array.from(tableBody.querySelectorAll('tr')).filter(row => row !== noDataRow);
         rows.forEach((row, index) => {
-            if (row !== noDataRow) { // Exclude the "No data" row from numbering
-                row.cells[0].textContent = index + 1;  // Update row number
-            }
+            row.cells[0].textContent = index + 1;
         });
-    }
-
-    // Clear the delete modal input when it closes
-    function clearDeleteModalInput() {
-        deleteLineNumberInput.value = '';
     }
 });

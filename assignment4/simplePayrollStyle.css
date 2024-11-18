@@ -112,6 +112,7 @@ h1 {
   border-collapse: collapse;
   border-radius: 8px;
   overflow: hidden;
+  background-color: transparent;
 }
 
 #payrollTable th {
@@ -120,17 +121,18 @@ h1 {
   color: #ffffff;
   text-align: center;
   font-weight: bold;
-  border-right: 1px solid #e9ecef; /* Adds vertical line between header columns */
+  border-right: 1px solid #e9ecef;
 }
 
 #payrollTable th:last-child {
-  border-right: none; /* Removes the right border on the last header cell */
+  border-right: none;
 }
 
 #payrollTable td {
   padding: 12px 15px;
   border: 1px solid #e9ecef;
   color: #495057;
+  background-color: #ffffff;
 }
 
 #payrollTable tr:nth-child(even) {
@@ -140,7 +142,6 @@ h1 {
 #payrollTable tr:hover {
   background-color: #e2e6ea;
 }
-
 
 /* "No data" row style */
 .no-data-row {
@@ -230,35 +231,48 @@ h1 {
   background-color: #5a6268;
 }
 
-/* Confirmation Modal buttons */
-#confirmDeleteBtn {
-  background-color: #4CAF50; /* Confirm button green */
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border: none;
+/* Responsive Design for 480px screen */
+@media (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+
+  .inputs button {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  #payrollTable th,
+  #payrollTable td {
+    padding: 10px;
+    font-size: 0.9em;
+  }
+
+  .modal-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.2em;
+  }
+
+  .modal-content button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }
-
-#confirmDeleteBtn:hover {
-  background-color: #45a049; /* Darker green on hover */
-}
-
-#cancelDeleteBtn {
-  background-color: #f44336; /* Cancel button red */
-  color: #fff;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border: none;
-}
-
-#cancelDeleteBtn:hover {
-  background-color: #d32f2f; /* Darker red on hover */
-}
-
-
