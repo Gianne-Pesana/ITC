@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Delete Employee Button Functionality
     deleteEmployeeBtn.addEventListener('click', () => {
-        deleteModal.style.display = 'flex';
+        deleteModal.classList.add('active'); // Show modal with active class
     });
 
     // Confirm Delete Row Functionality
@@ -63,8 +63,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const rowToDelete = parseInt(deleteLineNumberInput.value);
 
         if (rowToDelete >= 1 && rowToDelete <= tableBody.rows.length - 1) { // Ensure valid range
-            deleteModal.style.display = 'none';
-            confirmationModal.style.display = 'flex';
+            deleteModal.classList.remove('active'); // Hide the delete modal
+            confirmationModal.classList.add('active'); // Show confirmation modal
             confirmDeleteBtn.dataset.rowToDelete = rowToDelete;
         } else {
             alert('Invalid row number. Please enter a valid row number.');
@@ -86,18 +86,18 @@ document.addEventListener('DOMContentLoaded', () => {
             noDataRow.style.display = 'table-row';
         }
 
-        confirmationModal.style.display = 'none';
+        confirmationModal.classList.remove('active'); // Hide confirmation modal
         deleteLineNumberInput.value = '';
     });
 
     // Cancel Deletion
     cancelDeleteBtn.addEventListener('click', () => {
-        confirmationModal.style.display = 'none';
+        confirmationModal.classList.remove('active'); // Hide confirmation modal
     });
 
     // Close the Delete Modal
     closeModalBtn.addEventListener('click', () => {
-        deleteModal.style.display = 'none';
+        deleteModal.classList.remove('active'); // Hide delete modal
         deleteLineNumberInput.value = '';
     });
 
