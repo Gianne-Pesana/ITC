@@ -118,7 +118,6 @@ h6 {
     }
 }
 
-/* Styling for placeholder text in input */
 input[type="number"]::placeholder {
     color: #a4a9b6;
 }
