@@ -170,7 +170,7 @@ body {
 
 @media (max-width: 768px) {
   #hamburger {
-    display: block; 
+    display: none; 
   }
 }
 
@@ -283,7 +283,6 @@ body {
   }
 }
 
-/* Hide the hamburger button on screens wider than 768px */
 @media (min-width: 769px) {
   .hamburger-icon {
     display: none;
@@ -512,7 +511,7 @@ body {
 
 #assignments h1,
 #assignments p {
-  z-index: 1;
+  z-index: 10;
   position: relative;
 }
 
@@ -564,10 +563,19 @@ body {
   font-weight: bold;
 }
 
+.assignment-image {
+  display: block;
+  max-width: 60%;
+  height: auto;
+  margin: 10px 0;
+  opacity: 80%;
+  translate: 5px;
+}
+
+
 .assignment-rectangle p {
   color: #d0d0d0;
   flex-grow: 1;
-  margin-bottom: 15px;
   overflow: hidden;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -594,6 +602,10 @@ body {
     width: 100%;
     max-width: 400px;
   }
+  .assignment-image {
+    max-width: 50%; /* Adjust width for smaller screens */
+    margin: 10px auto; /* Center images */
+  }
 }
 
 @media (max-width: 480px) {
@@ -601,6 +613,11 @@ body {
     width: 100%;
     max-width: 300px;
     padding: 15px;
+  }
+
+  .assignment-image {
+    max-width: 65%; 
+    margin: 10px auto; 
   }
 
   .assignment-rectangle h3 {
