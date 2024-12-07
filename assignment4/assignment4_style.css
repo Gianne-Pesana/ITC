@@ -1,3 +1,49 @@
+/* ----------- Icon Container -------------- */
+.icon-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box; 
+}
+
+/* Back to Home Icon */
+.back-to-home {
+  flex-shrink: 0; 
+  text-align: left; 
+}
+
+.back-to-home a img {
+  width: 40px;
+  height: 40px;
+  filter: invert(1) brightness(2);
+  transition: all 0.3s ease;
+}
+
+.back-to-home a:visited img {
+  filter: invert(1) brightness(1.8);
+}
+
+.back-to-home a img:hover {
+  filter: invert(1) brightness(2.5);
+  transform: scale(1.1);
+}
+
+.back-to-home a img:active {
+  transform: scale(0.95);
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .icon-container {
+      flex-direction: row; 
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+  }
+}
+
 /* General Reset */
 * {
   margin: 0;
@@ -191,7 +237,7 @@ table {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+  background-color: rgba(0, 0, 0, 0.8); 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,21 +254,21 @@ table {
 
 /* Modal Content */
 .modal-content {
-  background-color: #2a2a2a; /* Slightly lighter than the main background */
+  background-color: #2a2a2a; 
   padding: 25px;
   border-radius: 12px;
   width: 90%;
   max-width: 400px;
   text-align: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
-  color: #e0e0e0; /* Light text for readability */
+  color: #e0e0e0; 
 }
 
 /* Modal Headings */
 .modal-content h2 {
   margin-bottom: 15px;
   font-size: 1.8em;
-  color: #82b1ff; /* Soft blue for titles */
+  color: #82b1ff; 
   border-bottom: 2px solid #424242;
   padding-bottom: 10px;
 }
@@ -230,7 +276,7 @@ table {
 /* Modal Text */
 .modal-content p {
   font-size: 1.2em;
-  color: #cccccc; /* Softer text for body content */
+  color: #cccccc; 
   margin: 15px 0 25px 0;
 }
 
@@ -249,11 +295,11 @@ table {
 
 /* Specific Button Colors */
 #confirmDeleteLineBtn, #confirmDeleteBtn {
-  background-color: #4caf50; /* Green: Positive action */
+  background-color: #4caf50; 
 }
 
 #closeModalBtn, #cancelDeleteBtn {
-  background-color: #f44336; /* Red: Negative action */
+  background-color: #f44336; 
 }
 
 /* Hover Effects */
@@ -262,11 +308,11 @@ table {
 }
 
 #confirmDeleteLineBtn:hover, #confirmDeleteBtn:hover {
-  background-color: #45a049; /* Slightly darker green */
+  background-color: #45a049; 
 }
 
 #closeModalBtn:hover, #cancelDeleteBtn:hover {
-  background-color: #e53935; /* Slightly darker red */
+  background-color: #e53935; 
 }
 
 /* Input Field Styling in Modal */
@@ -364,32 +410,4 @@ table {
     padding: 10px 15px;
     font-size: 0.9em;
   }
-}
-
-/* Back to Home Icon */
-.back-to-home {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 10;
-}
-
-.back-to-home a img {
-  width: 40px;
-  height: 40px;
-  filter: invert(1) brightness(2);
-  transition: all 0.3s ease;
-}
-
-.back-to-home a:visited img {
-  filter: invert(1) brightness(1.8);
-}
-
-.back-to-home a img:hover {
-  filter: invert(1) brightness(2.5);
-  transform: scale(1.1);
-}
-
-.back-to-home a img:active {
-  transform: scale(0.95);
 }

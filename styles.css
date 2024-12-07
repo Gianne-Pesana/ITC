@@ -149,8 +149,8 @@ body {
   height: 25px;
   cursor: pointer;
   z-index: 20;
-  background: transparent; 
-  border: none; 
+  background: transparent;
+  border: none;
 }
 
 /* Hamburger Icon Lines */
@@ -163,14 +163,14 @@ body {
 }
 
 #hamburger {
-  background: transparent; 
-  border: none; 
-  display: none; 
+  background: transparent;
+  border: none;
+  display: none;
 }
 
 @media (max-width: 768px) {
   #hamburger {
-    display: none; 
+    display: none;
   }
 }
 
@@ -202,9 +202,9 @@ body {
   right: 0;
   background-color: #000;
   padding: 20px;
-  width: auto; 
-  height: auto; 
-  max-width: 250px;  
+  width: auto;
+  height: auto;
+  max-width: 250px;
   transform: translateX(0);
   z-index: 15;
 }
@@ -216,21 +216,21 @@ body {
 
 /* Dropdown Menu Styles */
 .navbar-menu {
-  display: none; 
-  position: absolute; 
-  top: 100%; 
-  right: 0; 
-  background-color: white; 
-  color: black; 
-  border: 1px solid #ccc; 
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  color: black;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 10px;
-  width: auto; 
-  min-width: 150px; 
-  max-width: 300px; 
-  z-index: 1000; 
-  white-space: nowrap; 
-  border-radius: 4px; 
+  width: auto;
+  min-width: 150px;
+  max-width: 300px;
+  z-index: 1000;
+  white-space: nowrap;
+  border-radius: 4px;
 }
 
 .navbar-menu.show {
@@ -245,7 +245,7 @@ body {
 }
 
 .navbar-item:hover {
-  background-color: #f0f0f0; 
+  background-color: #f0f0f0;
 }
 
 /* Show Hamburger Icon for Mobile */
@@ -289,16 +289,16 @@ body {
   }
 
   .navbar-right {
-    display: flex; 
-    position: static; 
-    background: none; 
+    display: flex;
+    position: static;
+    background: none;
     color: white;
-    box-shadow: none; 
+    box-shadow: none;
     padding: 0;
   }
 
   .navbar-item {
-    padding: 0 10px; 
+    padding: 0 10px;
   }
 }
 
@@ -602,9 +602,12 @@ body {
     width: 100%;
     max-width: 400px;
   }
+
   .assignment-image {
-    max-width: 50%; /* Adjust width for smaller screens */
-    margin: 10px auto; /* Center images */
+    max-width: 50%;
+    /* Adjust width for smaller screens */
+    margin: 10px auto;
+    /* Center images */
   }
 }
 
@@ -616,8 +619,8 @@ body {
   }
 
   .assignment-image {
-    max-width: 65%; 
-    margin: 10px auto; 
+    max-width: 65%;
+    margin: 10px auto;
   }
 
   .assignment-rectangle h3 {
