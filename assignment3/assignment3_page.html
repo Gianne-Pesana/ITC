@@ -1,13 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calculation</title>
-    <link rel="stylesheet" href="assignment3_style.css">
-    <link rel="icon" href="../assets/favicon/favicon2.ico" type="image/x-icon"/>
-</head>
-<body>
+    <link rel="stylesheet" href="assignment3_style.css" />
+    <link
+      rel="icon"
+      href="../assets/favicon/favicon2.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- Back to Home Icon -->
+    <div class="back-to-home">
+      <a href="../index.html" title="back to home">
+        <img src="../assets/images/home-icon.png" alt="Home" />
+      </a>
+    </div>
+
+    <!-- Next Assignment Link -->
+    <div class="next-assignment-link">
+      <a
+        href="../assignment4/assignment4_page.html"
+        target="_blank"
+        title="next assignment"
+      >
+        <img src="../assets/images/arrow-right.png" alt="Next Assignment" />
+      </a>
+    </div>
+
     <!-- Animated Starry Background -->
     <div id="starryBackground"></div>
 
@@ -16,34 +38,41 @@
 
     <!-- Nth factorial -->
     <div class="calculation-container">
-        <h3>Nth factorial</h3>
-        <h4>Enter a number:</h4>
-        <input type="number" id="factorialInput" placeholder="number">
-        <button id="factorialId">Calculate</button>
-        <h4 class="result" id="factorialOutput"></h4>
-        <hr class="output-line" id="factorialLine"> <!-- Output line -->
+      <h3>Nth factorial</h3>
+      <h4>Enter a number:</h4>
+      <input type="number" id="factorialInput" placeholder="number" />
+      <button id="factorialId">Calculate</button>
+      <h4 class="result" id="factorialOutput"></h4>
+      <hr class="output-line" id="factorialLine" />
+      <!-- Output line -->
     </div>
 
     <!-- Sum of the first N numbers -->
     <div class="calculation-container">
-        <h3>Sum of the first N numbers</h3>
-        <h4>Enter a number:</h4>
-        <input type="number" id="sumInput" placeholder="number">
-        <button id="sumId">Calculate</button>
-        <h4 class="resultText" id="sumOutputText">Sum of the first N numbers is:</h4>
-        <h4 class="resultNumber" id="sumOutputNumber"></h4>
-        <hr class="output-line" id="sumLine"> <!-- Output line -->
+      <h3>Sum of the first N numbers</h3>
+      <h4>Enter a number:</h4>
+      <input type="number" id="sumInput" placeholder="number" />
+      <button id="sumId">Calculate</button>
+      <h4 class="resultText" id="sumOutputText">
+        Sum of the first N numbers is:
+      </h4>
+      <h4 class="resultNumber" id="sumOutputNumber"></h4>
+      <hr class="output-line" id="sumLine" />
+      <!-- Output line -->
     </div>
 
     <!-- Average of the first N numbers -->
     <div class="calculation-container">
-        <h3>Average of the first N numbers</h3>
-        <h4>Enter a number:</h4>
-        <input type="number" id="averageInput" placeholder="number">
-        <button id="averageId">Calculate</button>
-        <h4 class="resultText" id="averageOutputText">Average of the first N numbers is:</h4>
-        <h4 class="resultNumber" id="averageOutputNumber"></h4>
-        <hr class="output-line" id="averageLine"> <!-- Output line -->
+      <h3>Average of the first N numbers</h3>
+      <h4>Enter a number:</h4>
+      <input type="number" id="averageInput" placeholder="number" />
+      <button id="averageId">Calculate</button>
+      <h4 class="resultText" id="averageOutputText">
+        Average of the first N numbers is:
+      </h4>
+      <h4 class="resultNumber" id="averageOutputNumber"></h4>
+      <hr class="output-line" id="averageLine" />
+      <!-- Output line -->
     </div>
 
     <!-- Main Script -->
@@ -51,5 +80,5 @@
 
     <!-- Background Animation Script -->
     <script src="assignment3_animation.js"></script>
-</body>
+  </body>
 </html>

@@ -1,50 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Conversion</title>
     <link rel="stylesheet" href="assignment1_style.css" />
-    <link rel="icon" href="../assets/favicon/favicon2.ico" type="image/x-icon" />
-</head>
+    <link
+      rel="icon"
+      href="../assets/favicon/favicon2.ico"
+      type="image/x-icon"
+    />
+  </head>
 
-<body>
+  <body>
+    <!-- Back to Home Icon -->
+    <div class="back-to-home">
+      <a href="../index.html" title="back to home">
+        <img src="../assets/images/home-icon.png" alt="Home" />
+      </a>
+    </div>
+
+    <!-- Next Assignment Link -->
+    <div class="next-assignment-link">
+      <a
+        href="../assignment2/assignment2_page.html"
+        target="_blank"
+        title="next assignment"
+      >
+        <img src="../assets/images/arrow-right.png" alt="Next Assignment" />
+      </a>
+    </div>
+
     <!-- Animated Starry Background -->
     <div id="starryBackground"></div>
-    
+
     <h1>Assignment #1</h1>
 
     <!-- Celsius to Fahrenheit -->
     <div class="converter">
-        <h2>Celsius to Fahrenheit</h2>
-        <label for="celsius">Enter Celsius:</label>
-        <input type="number" id="celsius" placeholder="Enter celsius">
-        <h4 id="resultC-F"></h4>
+      <h2>Celsius to Fahrenheit</h2>
+      <label for="celsius">Enter Celsius:</label>
+      <input type="number" id="celsius" placeholder="Enter celsius" />
+      <h4 id="resultC-F"></h4>
     </div>
 
     <!-- Fahrenheit to Celsius -->
     <div class="converter">
-        <h2>Fahrenheit to Celsius</h2>
-        <label for="fahrenheit">Enter Fahrenheit:</label>
-        <input type="number" id="fahrenheit" placeholder="Enter fahrenheit">
-        <h4 id="resultF-C"></h4>
+      <h2>Fahrenheit to Celsius</h2>
+      <label for="fahrenheit">Enter Fahrenheit:</label>
+      <input type="number" id="fahrenheit" placeholder="Enter fahrenheit" />
+      <h4 id="resultF-C"></h4>
     </div>
 
     <!-- Meters to Feet -->
     <div class="converter">
-        <h2>Meters to Feet</h2X>
-        <label for="meters">Enter Meters:</label>
-        <input type="number" id="meters" placeholder="Enter meters">
-        <h4 id="resultM-Ft"></h4>
+      <h2>Meters to Feet</h2>
+      <label for="meters">Enter Meters:</label>
+      <input type="number" id="meters" placeholder="Enter meters" />
+      <h4 id="resultM-Ft"></h4>
     </div>
 
     <!-- Feet to Meters -->
     <div class="converter">
-        <h2>Feet to Meters</h2>
-        <label for="feet">Enter Feet:</label>
-        <input type="number" id="feet" placeholder="Enter feet">
-        <h4 id="resultFt-M"></h4>
+      <h2>Feet to Meters</h2>
+      <label for="feet">Enter Feet:</label>
+      <input type="number" id="feet" placeholder="Enter feet" />
+      <h4 id="resultFt-M"></h4>
     </div>
 
     <!-- Main Script -->
@@ -52,6 +73,5 @@
 
     <!-- Background Animation Script -->
     <script src="assignment1_animation.js"></script>
-</body>
-
+  </body>
 </html>

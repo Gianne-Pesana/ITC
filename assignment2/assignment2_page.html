@@ -1,32 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Income Tax Calculator</title>
-    <link rel="stylesheet" href="assignment2_style.css">
-    <link rel="icon" href="../assets/favicon/favicon2.ico" type="image/x-icon"/>
-</head>
+    <link rel="stylesheet" href="assignment2_style.css" />
+    <link
+      rel="icon"
+      href="../assets/favicon/favicon2.ico"
+      type="image/x-icon"
+    />
+  </head>
 
-<body>
+  <body>
+    <!-- Back to Home Icon -->
+    <div class="back-to-home">
+      <a href="../index.html" title="back to home">
+        <img src="../assets/images/home-icon.png" alt="Home" />
+      </a>
+    </div>
+
+    <!-- Next Assignment Link -->
+    <div class="next-assignment-link">
+      <a
+        href="../assignment3/assignment3_page.html"
+        target="_blank"
+        title="next assignment"
+      >
+        <img src="../assets/images/arrow-right.png" alt="Next Assignment" />
+      </a>
+    </div>
+
     <!-- Animated Starry Background -->
     <div id="starryBackground"></div>
 
     <h1>Assignment #2</h1>
     <h2>Income Tax Calculator</h2>
     <div class="container">
-        <h4 class="h4Input">Taxable Income:</h4>
-        <input type="number" id="ti" placeholder="Enter your income">
-        <h4 class="h4Output">Tax Payable:</h4>
-        <div class="output-container">
-            <h6 id="tp"></h6>
-            <div class="output-line"></div>
-        </div>
+      <h4 class="h4Input">Taxable Income:</h4>
+      <input type="number" id="ti" placeholder="Enter your income" />
+      <h4 class="h4Output">Tax Payable:</h4>
+      <div class="output-container">
+        <h6 id="tp"></h6>
+        <div class="output-line"></div>
+      </div>
     </div>
     <!-- Main Script -->
     <script src="assignment2_script.js"></script>
 
     <!-- Background Animation Script -->
     <script src="assignment2_animation.js"></script>
-</body> 
+  </body>
 </html>

@@ -130,3 +130,58 @@ button:hover {
     }
 }
 
+/* Back to Home Icon */
+.back-to-home {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+.back-to-home a img {
+    width: 40px;
+    height: 40px;
+    filter: invert(1) brightness(2);
+    transition: all 0.3s ease;
+}
+
+.back-to-home a:visited img {
+    filter: invert(1) brightness(1.8);
+}
+
+.back-to-home a img:hover {
+    filter: invert(1) brightness(2.5);
+    transform: scale(1.1);
+}
+
+.back-to-home a img:active {
+    transform: scale(0.95);
+}
+
+/* Next Assignment Link */
+.next-assignment-link {
+    position: absolute;
+    top: 20px;
+    right: 20px; 
+    z-index: 10;
+}
+
+.next-assignment-link a img {
+    width: 40px;
+    height: 40px;
+    filter: invert(1) brightness(2); 
+    transition: all 0.3s ease;
+}
+
+.next-assignment-link a:visited img {
+    filter: invert(1) brightness(1.8); 
+}
+
+.next-assignment-link a img:hover {
+    filter: invert(1) brightness(2.5); 
+    transform: scale(1.1); 
+}
+
+.next-assignment-link a img:active {
+    transform: scale(0.95); 
+}
