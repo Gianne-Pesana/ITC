@@ -3,26 +3,34 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="ITC assignments">
-    <meta name="author" content="Gianne Pesaña">
+    <meta name="description" content="ITC assignments" />
+    <meta name="author" content="Gianne Pesaña" />
     <title>Home Page - Gianne</title>
-    <link rel="icon" href="assets/favicon/favicon2.ico" type="image/x-icon"/>
-    <link rel="stylesheet" type="text/css" href="styles.css"/>
+    <link rel="icon" href="assets/favicon/favicon2.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav class="navbar">
       <div class="navbar-left">
-        <a href="https://www.addu.edu.ph/" target="_blank" class="university-link">
+        <a
+          href="https://www.addu.edu.ph/"
+          target="_blank"
+          class="university-link"
+        >
           <img src="assets/images/adduLogo.png" alt="Logo" class="logo" />
           <span class="navbar-title">Ateneo de Davao University</span>
         </a>
       </div>
-      <div class="navbar-right">
+      <button class="hamburger" id="hamburger">
+        &#9776; <!-- Hamburger Icon -->
+      </button>
+      <div class="navbar-right" id="navbarMenu">
         <a href="#home" class="nav-link" id="navHome">Home</a>
         <a href="#assignments" class="nav-link" id="navAssignments">Assignments</a>
       </div>
     </nav>
+    
 
     <!-- Background -->
     <div class="starfield" id="starfield"></div>
@@ -35,7 +43,8 @@
         <h3>My assignments</h3>
         <p>Gianne Carl S. Pesaña</p>
         <a href="#assignments" class="button" id="goToAssignments"
-          >Go to Assignments</a>
+          >Go to Assignments</a
+        >
       </div>
 
       <img
@@ -61,31 +70,57 @@
       <div class="assignments-container">
         <div class="assignment-rectangle">
           <h3>Assignment #1</h3>
-          <p>Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to Feet, Feet to Meters)</p>
-          <a href="assignment1/assignment1_page.html" class="assignment-button" target="_blank">View Assignment</a>
+          <p>
+            Conversion (Celsius to Fahrenheit, Fahrenheit to Celsius, Meters to
+            Feet, Feet to Meters)
+          </p>
+          <a
+            href="assignment1/assignment1_page.html"
+            class="assignment-button"
+            target="_blank"
+            >View Assignment</a
+          >
         </div>
         <div class="assignment-rectangle">
           <h3>Assignment #2</h3>
           <p>Income Tax Calculator</p>
-          <a href="assignment2/assignment2_page.html" class="assignment-button" target="_blank">View Assignment</a>
+          <a
+            href="assignment2/assignment2_page.html"
+            class="assignment-button"
+            target="_blank"
+            >View Assignment</a
+          >
         </div>
         <div class="assignment-rectangle">
           <h3>Assignment #3</h3>
-          <p>Factorial (While Loop), Sum (Do While Loop) and Average (For Loop) of First N Natural Numbers</p>
-          <a href="assignment3/assignment3_page.html" class="assignment-button" target="_blank">View Assignment</a>
+          <p>
+            Factorial (While Loop), Sum (Do While Loop) and Average (For Loop)
+            of First N Natural Numbers
+          </p>
+          <a
+            href="assignment3/assignment3_page.html"
+            class="assignment-button"
+            target="_blank"
+            >View Assignment</a
+          >
         </div>
         <div class="assignment-rectangle">
           <h3>Assignment #4</h3>
           <p>Simple Payroll</p>
-          <a href="assignment4/assignment4_page.html" class="assignment-button" target="_blank">View Assignment</a>
+          <a
+            href="assignment4/assignment4_page.html"
+            class="assignment-button"
+            target="_blank"
+            >View Assignment</a
+          >
         </div>
       </div>
-      
+
       <div class="starfield" id="starfield-assignments"></div>
       <div class="blur-overlay"></div>
       <div class="overlay"></div>
     </section>
-    
+
     <script src="script.js"></script>
   </body>
 </html>

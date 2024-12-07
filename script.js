@@ -1,61 +1,84 @@
+// Starfield Initialization
 const starField = document.getElementById("starfield");
-      const numStars = 300;
-      
-      const starColors = [
-          "#ffffff",
-          "#b0c4de",
-          "#99ccff",
-          "#cce7ff",
-          "#6699ff",
-      ];
-      
-      for (let i = 0; i < numStars; i++) {
-          const star = document.createElement("div");
-          star.classList.add("star");
-          star.style.top = `${Math.random() * 100}vh`;
-          star.style.left = `${Math.random() * 100}vw`;
-          star.style.background =
-              starColors[Math.floor(Math.random() * starColors.length)];
-          star.style.animationDuration = `${Math.random() * 3 + 2}s`;
-          starField.appendChild(star);
-      }
-      
-      document
-          .getElementById("goToAssignments")
-          .addEventListener("click", function (event) {
-              event.preventDefault();
-              document.querySelector("#assignments").scrollIntoView({
-                  behavior: "smooth",
-              });
-          });
-      
-          document.addEventListener("DOMContentLoaded", function () {
+const numStars = 300;
+
+const starColors = [
+    "#ffffff",
+    "#b0c4de",
+    "#99ccff",
+    "#cce7ff",
+    "#6699ff",
+];
+
+for (let i = 0; i < numStars; i++) {
+    const star = document.createElement("div");
+    star.classList.add("star");
+    star.style.top = `${Math.random() * 100}vh`;
+    star.style.left = `${Math.random() * 100}vw`;
+    star.style.background =
+        starColors[Math.floor(Math.random() * starColors.length)];
+    star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+    starField.appendChild(star);
+}
+
+// Smooth Scroll to Assignments Section
+document
+    .getElementById("goToAssignments")
+    .addEventListener("click", function (event) {
+        event.preventDefault();
+        document.querySelector("#assignments").scrollIntoView({
+            behavior: "smooth",
+        });
+    });
+
+document.addEventListener("DOMContentLoaded", function () {
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
-    const navbarLeft = document.querySelector(".navbar-left"); // Select the existing navbar-left container
-    const assignmentsSection = document.querySelector("#assignments"); // Select the assignments section
+    const navbarLeft = document.querySelector(".navbar-left");
+    const assignmentsSection = document.querySelector("#assignments");
+    const navbarRight = document.querySelector(".navbar-right");
+    const hamburgerIcon = document.createElement("div");
+
+    // Create Hamburger Menu Icon
+    hamburgerIcon.classList.add("hamburger-icon");
+    hamburgerIcon.innerHTML = `
+        <span></span>
+        <span></span>
+        <span></span>
+    `;
+    document.querySelector(".navbar").appendChild(hamburgerIcon);
+
+    // Function to toggle the navbar-right visibility
+    hamburgerIcon.addEventListener("click", () => {
+        navbarRight.classList.toggle("active");
+        hamburgerIcon.classList.toggle("open");
+    });
 
     // Highlight the Home link by default when on the home section
-    const currentSection = window.location.hash || '#home';
-    if (currentSection === '#home') {
-        document.getElementById('navHome').classList.add("active");
+    const currentSection = window.location.hash || "#home";
+    if (currentSection === "#home") {
+        document.getElementById("navHome").classList.add("active");
     }
 
     // Function to highlight the active section in the navbar and smooth scroll to sections
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
+    navLinks.forEach((link) => {
+        link.addEventListener("click", function (event) {
             event.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
+            const targetId = link.getAttribute("href").substring(1);
             const targetSection = document.getElementById(targetId);
             targetSection.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
+                behavior: "smooth",
+                block: "start",
             });
 
-            navLinks.forEach(navLink => {
-                navLink.classList.remove('active');
+            navLinks.forEach((navLink) => {
+                navLink.classList.remove("active");
             });
-            link.classList.add('active');
+            link.classList.add("active");
+
+            // Close the hamburger menu when a link is clicked
+            navbarRight.classList.remove("active");
+            hamburgerIcon.classList.remove("open");
         });
     });
 
@@ -78,11 +101,12 @@ const starField = document.getElementById("starfield");
         });
 
         // Check if the page is scrolled to the assignments section
-        const assignmentsTop = assignmentsSection.getBoundingClientRect().top + window.scrollY;
+        const assignmentsTop =
+            assignmentsSection.getBoundingClientRect().top + window.scrollY;
         if (window.scrollY >= assignmentsTop - window.innerHeight / 2) {
-            navbarLeft.classList.add("hidden-logo"); // Hide navbar-left
+            navbarLeft.classList.add("hidden-logo");
         } else {
-            navbarLeft.classList.remove("hidden-logo"); // Show navbar-left
+            navbarLeft.classList.remove("hidden-logo");
         }
     });
 });
